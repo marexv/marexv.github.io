@@ -20,6 +20,8 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Cosmo theme CSS -->
     <link href="Custom/cosmo.min.css" rel="stylesheet" />
+    <!-- Selectize CSS-->
+    <link href="Content/Selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
     <!-- Custom CSS-->
     <link href="Custom/customStyleSheet.css" rel="stylesheet" />
     <!-- Custom Fonts -->
@@ -84,11 +86,12 @@
         <!-- [Attributes form]-->
         <!-- Get prediction -->
         <div class="container">
-            <div class="btn btn-default form-control">GET PREDICTION</div>
+            <div id="getPrediction" onclick="randomNumbers()" class="btn btn-default form-control">GET PREDICTION</div>
         </div>
         <!-- [Get prediction] -->
-
+        <!-- Predictions -->
         <div class="container">
+
             <div class="page-header">
                 <h2>Predicted interests</h2>
             </div>
@@ -99,19 +102,18 @@
                     <p>Efficient use of wood</p>
                 </div>
 
-                <div class="col-md-2">
-                    <p>YES</p>
+                <div id="toi1label" class="col-md-2">
+                    <p></p>
                 </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                        <div id="toi1bar" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">40% Complete (success)</span>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- [Efficient use of wood] -->
             <!-- Building with wood -->
             <div class="row">
@@ -119,11 +121,13 @@
                     <p> Building with wood </p>
                 </div>
 
-                <div class="col-md-2">YES</div>
+                <div id="toi2label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                        <div id="toi2bar" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">40% Complete (success)</span>
                         </div>
                     </div>
@@ -136,11 +140,13 @@
                     <p> Added value products </p>
                 </div>
 
-                <div class="col-md-2">YES</div>
+                <div id="toi3label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 89%">
+                        <div id="toi3bar" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">40% Complete (success)</span>
                         </div>
                     </div>
@@ -153,11 +159,13 @@
                     <p> Forests and Economy </p>
                 </div>
 
-                <div class="col-md-2">NO</div>
+                <div id="toi4label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 12%">
+                        <div id="toi4bar" class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">80% Complete (danger)</span>
                         </div>
                     </div>
@@ -170,11 +178,13 @@
                     <p> Forests and global warming </p>
                 </div>
 
-                <div class="col-md-2">YES</div>
+                <div id="toi5label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 67%">
+                        <div id="toi5bar" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">40% Complete (success)</span>
                         </div>
                     </div>
@@ -187,11 +197,13 @@
                     <p> Conservation by production </p>
                 </div>
 
-                <div class="col-md-2">NO</div>
+                <div id="toi6label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 12%">
+                        <div id="toi6bar" class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">80% Complete (danger)</span>
                         </div>
                     </div>
@@ -204,11 +216,13 @@
                     <p>  Multifunctional forestry and forest ecosystems </p>
                 </div>
 
-                <div class="col-md-2">NO</div>
+                <div id="toi7label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
+                        <div id="toi7bar" class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">80% Complete (danger)</span>
                         </div>
                     </div>
@@ -218,14 +232,16 @@
             <!-- Wood based inovations -->
             <div class="row">
                 <div class="col-md-4">
-                    <p>  Wood based inovations </p>
+                    <p>Wood based inovations</p>
                 </div>
 
-                <div class="col-md-2">NO</div>
+                <div id="toi8label" class="col-md-2">
+                    <p></p>
+                </div>
 
                 <div class="col-md-6">
                     <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+                        <div id="toi8bar" class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                             <span class="sr-only">80% Complete (danger)</span>
                         </div>
                     </div>
@@ -233,10 +249,113 @@
             </div>
             <!-- [ Wood based inovations ] -->
         </div>
+        <!--  [ Predictions ] -->
+
+        <div class="container">
+            <div onclick="reloadPage(true)" class="btn btn-default form-control">RESET ALL</div>
+        </div>
     </div>
     <!-- jQuery -->
     <script src="Scripts/jquery-3.1.0.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="Scripts/bootstrap.min.js"></script>
+    <!-- Selectize JS-->
+    <script src="Content/Selectize/js/selectize.min.js"></script>
+
+    <script>
+        function randomNumbers() {
+            var rand1 = Math.floor((Math.random() * 100) + 1);
+            var rand2 = Math.floor((Math.random() * 100) + 1);
+            var rand3 = Math.floor((Math.random() * 100) + 1);
+            var rand4 = Math.floor((Math.random() * 100) + 1);
+            var rand5 = Math.floor((Math.random() * 100) + 1);
+            var rand6 = Math.floor((Math.random() * 100) + 1);
+            var rand7 = Math.floor((Math.random() * 100) + 1);
+            var rand8 = Math.floor((Math.random() * 100) + 1);
+            console.log(rand1, rand2, rand3, rand4, rand5, rand6, rand7, rand8);
+
+            $("#toi1bar").css("width", rand1 + "%");
+            $("#toi2bar").css("width", rand2 + "%");
+            $("#toi3bar").css("width", rand3 + "%");
+            $("#toi4bar").css("width", rand4 + "%");
+            $("#toi5bar").css("width", rand5 + "%");
+            $("#toi6bar").css("width", rand6 + "%");
+            $("#toi7bar").css("width", rand7 + "%");
+            $("#toi8bar").css("width", rand8 + "%");
+
+            if (rand1 < 50) {
+                $("#toi1bar").addClass('progress-bar-danger');
+                $("#toi1label").text("NO");
+            } else {
+                $("#toi1bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi1label").text("YES");
+            }
+
+            if (rand2 < 50) {
+                $("#toi2bar").addClass('progress-bar-danger');
+                $("#toi2label").text("NO");
+            } else {
+                $("#toi2bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi2label").text("YES");
+            }
+
+            if (rand3 < 50) {
+                $("#toi3bar").addClass('progress-bar-danger');
+                $("#toi3label").text("NO");
+            } else {
+                $("#toi3bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi3label").text("YES");
+            }
+
+            if (rand4 < 50) {
+                $("#toi4bar").addClass('progress-bar-danger');
+                $("#toi4label").text("NO");
+            } else {
+                $("#toi4bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi4label").text("YES");
+            }
+
+            if (rand5 < 50) {
+                $("#toi5bar").addClass('progress-bar-danger');
+                $("#toi5label").text("NO");
+            } else {
+                $("#toi5bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi5label").text("YES");
+            }
+
+            if (rand6 < 50) {
+                $("#toi6bar").addClass('progress-bar-danger');
+                $("#toi6label").text("NO");
+            } else {
+                $("#toi6bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi6label").text("YES");
+            }
+
+            if (rand7 < 50) {
+                $("#toi7bar").addClass('progress-bar-danger');
+                $("#toi7label").text("NO");
+            } else {
+                $("#toi7bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi7label").text("YES");
+            }
+
+            if (rand8 < 50) {
+                $("#toi8bar").addClass('progress-bar-danger');
+                $("#toi8label").text("NO");
+            } else {
+                $("#toi8bar").removeClass('progress-bar-danger').addClass('progress-bar-success');
+                $("#toi8label").text("YES");
+            }
+        };
+
+        function reloadPage() {
+            location.reload();
+        }
+
+        $(document).ready(function () {
+
+        });
+    </script>
+
 </body>
 </html>
