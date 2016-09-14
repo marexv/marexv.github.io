@@ -68,20 +68,40 @@
                 </div>
             </div>
 
-            <div class="input-group" style="margin-bottom:20px;">
-                <span class="input-group-addon" id="sizing-addon2">1.</span>
-                <input type="text" class="form-control" placeholder="Education" aria-describedby="sizing-addon2">
-            </div>
+            <select class="form-control selectpicker" data-width="auto" style="margin-bottom:20px;">
+                <option data-hidden="true" style="font-weight:bold;">EDUCATION - Choose one option</option>
+                <option>Less than high school degree</option>
+                <option>High school graduate, diploma or equivalent</option>
+                <option>Trade, technical or vocational training</option>
+                <option>Some college credit, no degree</option>
+                <option>Bachelor's degree</option>
+                <option>Master's degree</option>
+                <option>Professional degree</option>
+                <option>Doctorate degree</option>
+                <option>Other</option>
+            </select>
 
-            <div class="input-group" style="margin-bottom:20px;">
-                <span class="input-group-addon" id="sizing-addon2">2.</span>
-                <input type="text" class="form-control" placeholder="Employment" aria-describedby="sizing-addon2">
-            </div>
+            <select class="form-control selectpicker" data-width="auto" style="margin-bottom:20px;">
+                <option data-hidden="true" style="font-weight:bold;">EMPLOYMENT STATUS - Choose one option</option>
+                <option>Employed for wages</option>
+                <option>Self-employed</option>
+                <option>Unemployed and looking for work</option>
+                <option>Unemployed and not looking for work</option>
+                <option>Homemaker</option>
+                <option>Student</option>
+                <option>Military</option>
+                <option>Retired</option>
+                <option>Unable to work</option>
+                <option>Other</option>
+            </select>
 
-            <div class="input-group" style="margin-bottom:20px;">
-                <span class="input-group-addon" id="sizing-addon2">3.</span>
-                <input type="text" class="form-control" placeholder="Type of residence" aria-describedby="sizing-addon2">
-            </div>
+            <select class="form-control selectpicker" data-width="auto" style="margin-bottom:20px;">
+                <option data-hidden="true" style="font-weight:bold;">TYPE OF RESIDENCE - Choose one option</option>
+                <option>Rural area</option>
+                <option>Suburban area</option>
+                <option>Urban area</option>
+            </select>
+
         </div>
         <!-- [Attributes form]-->
         <!-- Get prediction -->
@@ -254,6 +274,7 @@
         <div class="container">
             <div onclick="reloadPage(true)" class="btn btn-default form-control">RESET ALL</div>
         </div>
+
     </div>
     <!-- jQuery -->
     <script src="Scripts/jquery-3.1.0.js"></script>
